@@ -47,8 +47,8 @@ public class Program {
         out2.add(4.0);
         out2.add(6.0);
         
-        MinhaClasse.metodo1(ins2,out2);
-        MinhaClasse.metodo2(ins2,out2,e);
+        //MinhaClasse.metodo1(ins2,out2);
+        //MinhaClasse.metodo2(ins2,out2,e);
         MinhaClasse.metodo3(ins2,out2,e,lr);
         
         

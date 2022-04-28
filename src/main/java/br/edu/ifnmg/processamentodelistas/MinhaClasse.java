@@ -13,13 +13,13 @@ import java.util.List;
 public class MinhaClasse {
     
     
-    public static void metodo1(List<Double> ins, List<Double> outs){
+    public static Dupla<Double,Double> metodo1(List<Double> ins, List<Double> outs){
         Double w0 = 0.0;
         Double w1 = 0.0; 
         Double p;
         Double dif;
         
-        for(int j = 0; j < 2000 ; j++){
+        for(int j = 1; j <= 2000 ; j++){
             for(int i = 0; i < ins.size(); i++){
                 p = (w1 * ins.get(i) + w0);
                 dif = outs.get(i) - p;
@@ -31,16 +31,24 @@ public class MinhaClasse {
             }            
         }
         
+        final Double v1 = w0;
+        final Double v2 = w1;
+        return new Dupla<Double, Double>(){
+            @Override
+            public Double getL(){ return v1; }
+            @Override
+            public Double getR(){ return v2; }
+        }; 
 
     }
     
-    public static void metodo2(List<Double> ins, List<Double> outs, Integer e){
+    public static Dupla<Double,Double> metodo2(List<Double> ins, List<Double> outs, Integer e){
         Double w0 = 0.0;
         Double w1 = 0.0; 
         Double p;
         Double dif;
         
-        for(int j = 0; j < e ; j++){
+        for(int j = 1; j <= e ; j++){
             for(int i = 0; i < ins.size(); i++){
                 p = (w1 * ins.get(i) + w0);
                 dif = outs.get(i) - p;
@@ -52,16 +60,24 @@ public class MinhaClasse {
             }            
         }
         
+        final Double v1 = w0;
+        final Double v2 = w1;
+        return new Dupla<Double, Double>(){
+            @Override
+            public Double getL(){ return v1; }
+            @Override
+            public Double getR(){ return v2; }
+        }; 
 
     }
     
-    public static void metodo3(List<Double> ins, List<Double> outs, Integer e, Double lr){
+    public static Dupla<Double,Double> metodo3(List<Double> ins, List<Double> outs, Integer e, Double lr){
         Double w0 = 0.0;
         Double w1 = 0.0; 
         Double p;
         Double dif;
         
-        for(int j = 0; j < e ; j++){
+        for(int j = 1; j <= e ; j++){
             for(int i = 0; i < ins.size(); i++){
                 p = (w1 * ins.get(i) + w0);
                 dif = outs.get(i) - p;
@@ -73,6 +89,13 @@ public class MinhaClasse {
             }            
         }
         
-        
+        final Double v1 = w0;
+        final Double v2 = w1;
+        return new Dupla<Double, Double>(){
+            @Override
+            public Double getL(){ return v1; }
+            @Override
+            public Double getR(){ return v2; }
+        };                
     }
 }
